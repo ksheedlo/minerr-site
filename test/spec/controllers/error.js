@@ -54,7 +54,7 @@ describe('Controller: ErrorCtrl', function () {
 
   describe('at an error code with parameters', function () {
     beforeEach(inject(function ($controller) {
-      routeParamsMock = { id: '12', p1: 'test2', p2: 'test3' };
+      routeParamsMock = { id: '12', p0: 'test2', p1: 'test3' };
 
       ErrorCtrl = $controller('ErrorCtrl', {
         $scope: scope,
@@ -68,8 +68,4 @@ describe('Controller: ErrorCtrl', function () {
       expect(scope.errorMessage).toBe('test2 requires a test3');
     });
   });
-//  it('should show the correct message after the location path changes', function () {
-//    expect(scope.errorMessage).toBe('Bad parameter test1');
-//    expect(scope.errorMessage).toBe('test2 requires a test3');
-//  });
 });

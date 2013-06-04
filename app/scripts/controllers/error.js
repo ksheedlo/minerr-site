@@ -12,7 +12,7 @@ minerAppModule
       errorData = Error.get(function () {
         var interpolateArgs = [errorData.errors[$routeParams.id]], 
           index;
-        for (index = 1; $routeParams['p'+index]; index++) {
+        for (index = 0; $routeParams['p'+index]; index++) {
           interpolateArgs.push($routeParams['p'+index]);
         }
         $scope.errorMessage = Interpolate.interpolate.apply(Interpolate, interpolateArgs);
