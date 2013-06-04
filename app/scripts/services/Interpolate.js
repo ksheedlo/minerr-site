@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('minerrApp')
+minerAppModule
   .factory('Interpolate', function () {
 
     return {

@@ -1,0 +1,10 @@
+{
+  "id": "ng",
+  "version": "0.1",
+  "generated": "Mon Jun  3 18:12:43 PDT 2013",
+  "errors": {
+    "10": "Too many arguments",
+    "11": "Invalid auth token: {0}",
+    "12": "{1} comes before {0}"
+  }
+}

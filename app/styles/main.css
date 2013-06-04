@@ -1,1 +1,4 @@
 /* Will be compiled down to a single stylesheet with your sass files */
+.navbar-static-top {
+  margin-bottom: 20px;
+}

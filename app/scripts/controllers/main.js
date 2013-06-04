@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('minerrApp')
+minerAppModule
   .controller('MainCtrl', ['$scope', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
