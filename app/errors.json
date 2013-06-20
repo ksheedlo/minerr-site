@@ -1,10 +1,70 @@
 {
   "id": "ng",
-  "version": "0.1",
-  "generated": "Mon Jun  3 18:12:43 PDT 2013",
+  "version": "1.1.6-9ebc115",
   "errors": {
-    "10": "Too many arguments",
-    "11": "Invalid auth token: {0}",
-    "12": "{1} comes before {0}"
+    "ng": {
+      "cpws": "Can't copy! Making copies of Window or Scope instances is not supported.",
+      "cpi": "Can't copy! Source and destination are identical.",
+      "areq": "Argument '{0}' is {1}"
+    },
+    "$injector": {
+      "nomod": "Module '{0}' is not available! You either misspelled the module name or forgot to load it.",
+      "unpr": "Unknown provider: {0}",
+      "pget": "Provider '{0}' must define $get factory method.",
+      "cdep": "Circular dependency found: {0}",
+      "itkn": "Incorrect injection token! Expected service name as string, got {0}"
+    },
+    "jqLite": {
+      "nosel": "Looking up elements via selectors is not supported by jqLite! See: http://docs.angularjs.org/api/angular.element"
+    },
+    "$cacheFactory": {
+      "iid": "CacheId '{0}' is already taken!"
+    },
+    "$compile": {
+      "utrat": "Unterminated attribute, found '{0}' but no matching '{1}' found.",
+      "tplrt": "Template for directive '{0}' must have exactly one root element. {1}",
+      "ctreq": "Controller '{0}', required by directive '{1}', can't be found!",
+      "noass": "Expression '{0}' used with directive '{1}' is non-assignable!",
+      "iscp": "Invalid isolate scope definition for directive '{0}'. Definition: {... {1}: '{2}' ...}",
+      "tpload": "Failed to load template: {0}",
+      "multidir": "Multiple directives [{0}, {1}] asking for {2} on: {3}"
+    },
+    "$controller": {
+      "noscp": "Cannot export controller '{0}' as '{1}'! No $scope object provided via `locals`."
+    },
+    "$interpolate": {
+      "interr": "Can't interpolate: {0}\n{1}"
+    },
+    "$location": {
+      "nopp": "Invalid url \"{0}\", missing path prefix \"{1}\".",
+      "istart": "Invalid url \"{0}\", does not start with \"{1}\".",
+      "nohash": "Invalid url \"{0}\", missing hash prefix \"{1}\"."
+    },
+    "$parse": {
+      "lexerr": "Lexer Error: {0} at column{1} in expression [{2}].",
+      "syntax": "Syntax Error: Token '{0}' {1} at column {2} of the expression [{3}] starting at [{4}].",
+      "ueoe": "Unexpected end of expression: {0}"
+    },
+    "$rootScope": {
+      "infdig": "{0} $digest() iterations reached. Aborting!\nWatchers fired in the last 5 iterations: {1}",
+      "inprog": "{0} already in progress"
+    },
+    "$httpBackend": {
+      "noxhr": "This browser does not support XMLHttpRequest."
+    },
+    "ngPattern": {
+      "noregexp": "Expected {0} to be a RegExp but was {1}. Element: {2}"
+    },
+    "ngModel": {
+      "noass": "Expression '{0}' is non-assignable. Element: {1}"
+    },
+    "ngRepeat": {
+      "iexp": "Expected expression in form of '_item_ in _collection_[ track by _id_]' but got '{0}'.",
+      "iidexp": "'_item_' in '_item_ in _collection_' should be an identifier or '(_key_, _value_)' expression, but got '{0}'.",
+      "dupes": "Duplicates in a repeater are not allowed. Use 'track by' expression to specify unique keys. Repeater: {0}, Duplicate key: {1}"
+    },
+    "ngOptions": {
+      "iexp": "Expected expression in form of '_select_ (as _label_)? for (_key_,)?_value_ in _collection_' but got '{0}'. Element: {1}"
+    }
   }
 }

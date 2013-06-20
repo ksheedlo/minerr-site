@@ -1,6 +1,6 @@
 'use strict';
 
-minerAppModule
+minerrAppModule
   .factory('Interpolate', function () {
 
     return {

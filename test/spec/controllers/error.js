@@ -21,7 +21,10 @@ describe('Controller: ErrorCtrl', function () {
       'errors': {
         '10': 'Too many arguments',
         '11': 'Bad parameter {0}',
-        '12': '{0} requires a {1}'
+        '12': '{0} requires a {1}',
+        'test1': {
+          'one': '{0} is not the true {1}'
+        },
       }
     };
 
@@ -66,6 +69,23 @@ describe('Controller: ErrorCtrl', function () {
     
     it('should interpolate parameters into an error message', function () {
       expect(scope.errorMessage).toBe('test2 requires a test3');
+    });
+  });
+
+  describe('at a namespaced error code', function () {
+    beforeEach(inject(function ($controller) {
+      routeParamsMock = { namespace: 'test1', id: 'one', p0: 'Zen', p1: 'Buddha' };
+
+      ErrorCtrl = $controller('ErrorCtrl', {
+        $scope: scope,
+        $routeParams: routeParamsMock
+      });
+
+      $httpBackend.flush();
+    }));
+
+    it('should interpolate parameters for the correct error message', function () {
+      expect(scope.errorMessage).toBe('Zen is not the true Buddha');
     });
   });
 });

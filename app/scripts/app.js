@@ -1,6 +1,8 @@
 'use strict';
 
-var minerAppModule = angular.module('minerrApp', ['ngResource'])
+/*jshint -W098*/
+
+var minerrAppModule = angular.module('minerrApp', ['ngResource'])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -8,6 +10,10 @@ var minerAppModule = angular.module('minerrApp', ['ngResource'])
         controller: 'MainCtrl'
       })
       .when('/error/:id', {
+        templateUrl: 'views/error.html',
+        controller: 'ErrorCtrl'
+      })
+      .when('/error/:namespace/:id', {
         templateUrl: 'views/error.html',
         controller: 'ErrorCtrl'
       })

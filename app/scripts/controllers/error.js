@@ -1,17 +1,22 @@
 'use strict';
 
-minerAppModule
-  .controller('ErrorCtrl', ['$scope', '$resource', '$routeParams', 'Interpolate', 
-    function ($scope, $resource, $routeParams, Interpolate) {
-      var Error = $resource('/errors.json'),
-        errorData,
-        reloadErrorMessage;
+minerrAppModule
+  .controller('ErrorCtrl', ['$scope', '$resource', '$routeParams', 'Error', 'Interpolate',
+    function ($scope, $resource, $routeParams, Error, Interpolate) {
+      var errorData, getTemplate;
 
       $scope.errorMessage = '';
 
+      getTemplate = function () {
+        if ($routeParams.namespace) {
+          return errorData.errors[$routeParams.namespace][$routeParams.id];
+        }
+        return errorData.errors[$routeParams.id];
+      };
+
       errorData = Error.get(function () {
-        var interpolateArgs = [errorData.errors[$routeParams.id]], 
-          index;
+        var interpolateArgs = [getTemplate()], index;
+
         for (index = 0; $routeParams['p'+index]; index++) {
           interpolateArgs.push($routeParams['p'+index]);
         }
