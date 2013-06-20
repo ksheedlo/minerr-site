@@ -103,6 +103,6 @@ describe('Service: Error', function () {
     Error.get(successSpy2, errorSpy2);
     $httpBackend.flush();
     expect(errorSpy).toHaveBeenCalled();
-    expect(errorSpy).toHaveBeenCalled();
+    expect(errorSpy2).toHaveBeenCalled();
   });
 });
