@@ -26,4 +26,9 @@ describe('Service: Interpolate', function () {
   it('should interpolate parameters in the specified order', function () {
     expect(Interpolate.interpolate('{1} {0}', 'second', 'first')).toBe('first second');
   });
+
+  it('should preserve interpolation markers when fewer arguments than needed are provided', function () {
+    expect(Interpolate.interpolate('This {0} is {1} on {2}', 'Fooooo'))
+      .toBe('This Fooooo is {1} on {2}');
+  });
 });

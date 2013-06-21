@@ -33,7 +33,25 @@
         </div>
       </div>
     </div>
-    <div class="container" ng-view></div>
+    <div class="container">
+      <div class="row">
+        <div class="span3" ng-controller="ErrorSearchCtrl">
+          <form class="well form-search">
+            <input type="text" class="search-query input-medium" ng-model="search">
+            <ul class="nav nav-list well form-search-ns" ng-repeat="namespace in namespaces">
+              <li>
+                <div class="ns-search-header" ng-bind="namespace.namespace"></div>
+              </li>
+              <li ng-repeat="error in namespace.errors">
+              <a ng-href="/#/error/{{namespace.namespace}}/{{error.code}}" 
+                class="ns-search-link" ng-bind="error.code"></a>
+              </li>
+            </ul>
+          </form>
+        </div>
+        <div class="span9" ng-view></div>
+      </div>
+    </div>
 
     <script src="components/angular/angular.js"></script>
     <script src="components/angular-resource/angular-resource.js"></script>
@@ -42,6 +60,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/error.js"></script>
+    <script src="scripts/controllers/errorSearch.js"></script>
     <script src="scripts/services/Interpolate.js"></script>
     <script src="scripts/services/Error.js"></script>
     <!-- endbuild -->

@@ -3,9 +3,7 @@
 minerrAppModule
   .controller('ErrorCtrl', ['$scope', '$resource', '$routeParams', 'Error', 'Interpolate',
     function ($scope, $resource, $routeParams, Error, Interpolate) {
-      var errorData, getTemplate;
-
-      $scope.errorMessage = '';
+      var errorData, getName, getTemplate;
 
       getTemplate = function () {
         if ($routeParams.namespace) {
@@ -13,6 +11,16 @@ minerrAppModule
         }
         return errorData.errors[$routeParams.id];
       };
+
+      getName = function () {
+        if ($routeParams.namespace) {
+          return $routeParams.namespace + ':' + $routeParams.id;
+        }
+        return $routeParams.id;
+      };
+
+      $scope.errorMessage = '';
+      $scope.errorName = getName();
 
       errorData = Error.get(function () {
         var interpolateArgs = [getTemplate()], index;

@@ -2,3 +2,45 @@
 .navbar-static-top {
   margin-bottom: 20px;
 }
+
+.error-id {
+  margin-bottom: 20px;
+}
+
+.error-display {
+  color: red;
+  font-size: 20px;
+  padding: 6px 12px;
+  margin: 12px;
+  word-break: normal;
+}
+
+.form-search,
+.form-search-ns {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-color: #D3D3D3;
+}
+
+.form-search-ns {
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+}
+
+.form-search .search-query {
+  margin: 12px 0;
+}
+
+.ns-search-header {
+  background-color: #D3D3D3;
+  margin: 0 -15px 6px -15px;
+  padding: 0 15px;
+  font-family: monospace;
+  color: black;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.form-search .ns-search-link {
+  line-height: 14px;
+}
