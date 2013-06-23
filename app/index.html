@@ -37,12 +37,13 @@
       <div class="row">
         <div class="span3" ng-controller="ErrorSearchCtrl">
           <form class="well form-search">
-            <input type="text" class="search-query input-medium" ng-model="search">
-            <ul class="nav nav-list well form-search-ns" ng-repeat="namespace in namespaces">
+            <input type="text" placeholder="search minerr"
+              class="search-query input-medium" ng-model="query">
+            <ul class="nav nav-list well form-search-ns" ng-repeat="namespace in namespaces | filter:query">
               <li>
                 <div class="ns-search-header" ng-bind="namespace.namespace"></div>
               </li>
-              <li ng-repeat="error in namespace.errors">
+              <li ng-repeat="error in namespace.errors | filter:query">
               <a ng-href="/#/error/{{namespace.namespace}}/{{error.code}}" 
                 class="ns-search-link" ng-bind="error.code"></a>
               </li>
