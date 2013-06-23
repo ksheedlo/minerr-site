@@ -10,6 +10,7 @@
 .error-display {
   color: red;
   font-size: 20px;
+  line-height: 26px;
   padding: 6px 12px;
   margin: 12px;
   word-break: normal;
